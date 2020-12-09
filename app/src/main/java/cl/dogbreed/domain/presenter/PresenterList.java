@@ -3,6 +3,7 @@ package cl.dogbreed.domain.presenter;
 import java.util.List;
 
 import cl.dogbreed.data.model.InterfazModel;
+import cl.dogbreed.ui.presenter.IPresenterViewList;
 
 public class PresenterList implements IPresenterList,IPresenterModel{
  InterfazModel interfazModel;
