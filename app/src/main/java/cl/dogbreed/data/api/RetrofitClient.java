@@ -1,4 +1,4 @@
-package cl.dogbreed;
+package cl.dogbreed.data.api;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

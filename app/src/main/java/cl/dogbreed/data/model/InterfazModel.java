@@ -1,4 +1,4 @@
-package cl.dogbreed;
+package cl.dogbreed.data.model;
 
 public interface InterfazModel {
     void loadBreeds();

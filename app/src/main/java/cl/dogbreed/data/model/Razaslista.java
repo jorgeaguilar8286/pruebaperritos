@@ -1,4 +1,4 @@
-package cl.dogbreed;
+package cl.dogbreed.data.model;
 
 import java.util.List;
 import java.util.Map;
