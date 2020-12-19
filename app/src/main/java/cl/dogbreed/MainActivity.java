@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements IPresenterViewLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       presenter = new PresenterList(this,new Repositorio(this::notificar));
+       presenter = new PresenterList(this);
        adapter = new DogAdapter(new ArrayList<>());
        recyclerView = findViewById(R.id.recycleview);
        recyclerView.setLayoutManager(new LinearLayoutManager(getParent()));

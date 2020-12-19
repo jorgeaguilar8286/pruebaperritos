@@ -9,11 +9,9 @@ import cl.dogbreed.ui.presenterview.IPresenterViewList;
 public class PresenterList implements IPresenterList,IPresenterModel{
  InterfazModel interfazModel;
  IPresenterViewList iPresenterViewList;
- Repositorio repositorio;
 
-    public PresenterList(IPresenterViewList iPresenterViewList, Repositorio repositorio) {
+    public PresenterList(IPresenterViewList iPresenterViewList) {
         this.iPresenterViewList = iPresenterViewList;
-        this.repositorio = repositorio;
     }
 
     public void setInterfazModel(InterfazModel interfazModel) {
@@ -25,9 +23,9 @@ public class PresenterList implements IPresenterList,IPresenterModel{
       interfazModel.loadBreeds();
     }
 
+
     @Override
     public void notificar(List<String> list) {
         iPresenterViewList.notificar(list);
-
     }
 }

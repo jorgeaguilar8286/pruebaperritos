@@ -14,17 +14,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Repositorio implements InterfazModel {
-    private static final String TAG ="Breedmodel" ;
+
     IPresenterModel iPresenterModel;
 
     public Repositorio(IPresenterModel iPresenterModel) {
         this.iPresenterModel = iPresenterModel;
     }
 
-    public void setiPresenterModel(IPresenterModel iPresenterModel) {
-        this.iPresenterModel = iPresenterModel;
-    }
-
+    private static final String TAG ="Breedmodel";
     @Override
     public void loadBreeds() {
         Api servicio = RetrofitClient.getRetrofitInstance().create(Api.class);
@@ -35,14 +32,14 @@ public class Repositorio implements InterfazModel {
             public void onResponse(Call<Razaslista> call, Response<Razaslista> response) {
                 Razaslista breedList = response.body();
 
-                Log.d(TAG, "onResponse: " + response.body());
+                Log.d(TAG, "onResponse: " + response.body().getMessage().keySet().toString());
                 Map<String, List<String>> map = breedList.getMessage();
                 for (String key : map.keySet()) {
                     if (map.get(key).isEmpty()) {
                         list.add(key);
                     } else {
-                        for (String subBreed : map.get(key)) {
-                            list.add(key + " " + subBreed);
+                        for (String subRaza : map.get(key)) {
+                            list.add(key + " " + subRaza);
                         }
                     }}
                 iPresenterModel.notificar(list);
