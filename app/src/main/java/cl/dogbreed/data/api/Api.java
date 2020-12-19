@@ -9,8 +9,8 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface Api {
-    @GET("api/breeds/list/all")
+    @GET("breeds/list/all")
     Call<Razaslista> listaRazas();
-    @GET("api/breed/{breed}/images")
-    Call<RazaImagen> listaImagen(@Path("breed")String breed);
+    @GET("breed/{breed}/images")
+    Call<RazaImagen> listaImagenes(@Path("breed")String breed);
 }
